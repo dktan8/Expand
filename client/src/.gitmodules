@@ -1,0 +1,3 @@
+[auth "path_to_auth"] 
+  path = Expand/auth
+  url = https://github.com/thelinmichael/spotify-web-api-node
