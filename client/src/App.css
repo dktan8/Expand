@@ -1,0 +1,125 @@
+body {
+  background-color: rgb(236, 248, 244);
+}
+
+.title {
+  padding-top: 1%;
+  font-size: 10rem;
+  font-weight: bolder;
+  color: rgb(142, 226, 198);
+  font-family: serif;
+}
+.subtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  position: static;
+  left: 20%;
+  top: 23%;
+}
+
+button.spotify {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: rgb(236, 248, 244);
+  font-weight: bolder;
+  font-size: 2rem;
+  transition-duration: 0.4s;
+  border: 0px solid rgb(187, 239, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+button.playlist {
+  background-color: rgb(209, 248, 235);
+  font-weight: bolder;
+  font-size: 2rem;
+  transition-duration: 0.4s;
+  border: 0px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+button.random {
+  background-color: rgb(209, 248, 235);
+  font-weight: bolder;
+  font-size: 2rem;
+  transition-duration: 0.4s;
+  border: 0px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  bottom: 60%;
+  height: 90%;
+}
+
+button.spotify:hover {
+  background-color: #bcffdd;
+  color: white;
+  width: auto;
+}
+button:hover {
+  background-color: #bcffdd;
+  color: white;
+  width: 60%;
+}
+
+div,
+button {
+  margin: 25px;
+}
+
+.displayText {
+  position: absolute;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1rem;
+  bottom: 1rem;
+  right: 6rem;
+  max-width: 15rem;
+  text-align: center;
+}
+
+.cover {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  border: 20px solid rgb(142, 226, 198);
+  border-radius: 6px;
+  bottom: 3.5rem;
+  right: 3rem;
+}
+
+.menu {
+  display: flex;
+  background-color: rgb(142, 226, 198);
+  justify-content: center;
+  flex-direction: column;
+  max-width: 65%;
+  border-radius: 2px;
+  transform: scale(1);
+  animation: expand 6s infinite;
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
