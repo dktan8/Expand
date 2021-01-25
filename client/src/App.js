@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import './App.css';
 import Spotify from 'spotify-web-api-js'
 
+//Defines the api wrapper
 const spotifyWebApi = new Spotify({
   client_id: '39efc2e0e04641d9a440b4117e1cb2a1',
 client_secret: 'f476a0de090e41a7879c5b6435d44b4d',
 redirect_uri: 'http://localhost:8888/callback'
 })
 
+//initialises elements and access token
 class App extends Component {
     constructor(){
     super();
@@ -25,7 +27,7 @@ class App extends Component {
     }
   }
 
-
+  //Gets the hash parameters
   getHashParams() {
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -36,6 +38,7 @@ class App extends Component {
     return hashParams;
   }
 
+//retrieves the current song and assigns it to the display
 getNowPlaying(){
   try{
   spotifyWebApi.getMyCurrentPlaybackState().then((response) =>
@@ -57,6 +60,7 @@ catch(err){
 }
 }
 
+//retrieves the user's top artist and assigns it to the display
 getArtists(){
   spotifyWebApi.getMyTopArtists().then((response) =>
   {let topArtists = response;
@@ -69,6 +73,7 @@ getArtists(){
   })})
 }
 
+//follows the specified playlist
 followPlaylist(){
   spotifyWebApi.followPlaylist('4rRDxmCkGNlDBSOblRYdvv'
   ).then(function(data) {
@@ -80,6 +85,7 @@ followPlaylist(){
   this.getPlayList()
 }
 
+//resunmes playback of the current song
 playSong(){
   spotifyWebApi.play({context_url:'spotify:playlist:4rRDxmCkGNlDBSOblRYdvv' }).then(function() {
     console.log('Playback started');
@@ -89,6 +95,7 @@ playSong(){
   });
 }
 
+//retrieves the specified playlist data and assigns it data
 getPlayList(){
   spotifyWebApi.getPlaylist('4rRDxmCkGNlDBSOblRYdvv', "")
   .then((data) => {
@@ -99,6 +106,8 @@ getPlayList(){
     }
   })})
 }
+
+
 render(){
   return (
     <div className="App">
